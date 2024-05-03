@@ -1,0 +1,41 @@
+.notif {
+  width: 30%;
+  position: absolute;
+  padding: 10px 20px;
+  background-color: white;
+  font-family: "nunito";
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px silver;
+  opacity: 0;
+  color: white;
+  z-index: 2000;
+}
+
+.notif.warning {
+  background-color: #f89406;
+}
+
+.notif.danger {
+  background-color: red;
+}
+
+.notif.info {
+  background-color: rgba(7, 133, 250, 0.822);
+}
+
+.notif.success {
+  background-color: rgba(1, 191, 102, 0.822);
+}
+
+.close-icon:after {
+  display: inline-block;
+  content: "\00d7";
+  /* This will render the 'X' */
+
+}
+
+.Thesharsol-notifyer {
+  overflow: hidden;
+  padding: 2px;
+  transition: top linear 0.2s;
+}
