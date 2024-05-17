@@ -5,17 +5,25 @@
 
 Thesharsol notifyer is a lightweight, vanilla JS toast notification library.
 
+
+### Installation
+
+```
+npm i theshtify
+```
+
 ## Demo
 
 [Click here](https://apvarun.github.io/toastify-js/)
 
 ## Features
 
+* Easy use
 * Multiple stacked notifications
 * Customizable
 * No blocking of execution thread
 
-### Customization options
+## Customization options
 
 * Notification Text
 * Duration
@@ -27,35 +35,23 @@ Thesharsol notifyer is a lightweight, vanilla JS toast notification library.
 * progress
 * border radius
 * borders
-### example
+
+## example
 ```js
-        Notif.Notifier.notify(
-            {
-                message: 'text',
-                x_align:'middle',
-                y_align:'top',
-                type:'custom',
-                // duration:300
-                colors:{
-                    bg:'yellow',
-                    color:'black',
-                    border:2
-                },
-                radius:5,
-                bordered:false,
+Notif.Notifier.notify(
+    {
+        message: 'text',
+        x_align:'middle',
+        y_align:'top',
+        type:'custom',
+        colors:{
+            bg:'yellow',
+            color:'black',
+            border:2
+        },
+        radius:5,
+        bordered:false,
 
-            }
-        );
+    }
+);
 ```
-
-
-
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-``` 
-
-Here's a sentence with a footnote. [^1]
