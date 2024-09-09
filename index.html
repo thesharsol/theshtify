@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/theshtify.css" />
+    <title>theshtify</title>
+</head>
+
+<body style="background-color: black;">
+    <button id="notif_button" onclick="notify()">theshtify</button>
+</body>
+<script src="./lib/theshtifyCDN.js" ></script>
+<script>
+    function notify() {
+        // let Notif = await import('./lib/notif.js');
+
+        theshtify(
+            {
+                message: 'welcome to theshtify',
+                x_align: 'middle',
+                y_align: 'middle',
+                type: 'danger',
+                duration: 6000,
+                font: {
+                    size: 14,
+                    weigth: 900,
+                    family: 'corbel'
+                },
+                duration:5000,
+                colors: {
+                    bg: '#efefef',
+                    color: 'black',
+                    border: {
+                        type: 'solid',
+                        color: 'gray'
+                    },
+                    progress: {
+                        bg: 'gray'
+                    }
+                },
+                radius: 2,
+                bordered: true,
+                // closer: true,
+                progress_height: 2,
+                progress: true
+
+            }
+        );
+    }
+</script>
+
+
+</html>

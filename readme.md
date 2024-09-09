@@ -3,7 +3,7 @@
 <!-- [![Thesharsol notifyer](https://img.shields.io/badge/vaui-notif--js-1.0.0-brightgreen.svg)](https://www.npmjs.com/package/vaui-notif) -->
 ![MIT License](https://img.shields.io/npm/l/toastify-js)
 
-Thesharsol notifyer is a lightweight, vanilla JS toast notification library.
+Thesharsol notifyer is a lightweight, vanilla JS toast notification library.it is completely customisable, allowing you to adapt the graphics window perfectly to the design of your project
 
 
 ### Installation
@@ -11,10 +11,17 @@ Thesharsol notifyer is a lightweight, vanilla JS toast notification library.
 ```
 npm i theshtify
 ```
+### CDN
 
-## Demo
+``` javascript
+<script src="https://cdn.jsdelivr.net/npm/theshtify@1.0.0/"> </script>
+```
 
-[Click here](https://apvarun.github.io/toastify-js/)
+### ES6
+
+``` javascript
+import theshtify from theshtify;
+```
 
 ## Features
 
@@ -37,21 +44,40 @@ npm i theshtify
 * borders
 
 ## example
-```js
-Notif.Notifier.notify(
-    {
-        message: 'text',
-        x_align:'middle',
-        y_align:'top',
-        type:'custom',
-        colors:{
-            bg:'yellow',
-            color:'black',
-            border:2
-        },
-        radius:5,
-        bordered:false,
 
-    }
-);
+###CDN
+```js
+    theshtify(
+        {
+            message: 'welcome to theshtify',
+            x_align: 'middle',
+            y_align: 'middle',
+            type: 'danger',
+            duration: 6000,
+            font: {
+                size: 14,
+                weigth: 900,
+                family: 'corbel'
+            },
+            duration:300,
+            colors: {
+                bg: '#efefef',
+                color: 'black',
+                border: {
+                    type: 'solid',
+                    color: 'gray'
+                },
+                progress: {
+                    bg: 'gray'
+                }
+            },
+            radius: 2,
+            bordered: true,
+            // closer: true,
+            progress_height: 2,
+            progress: true
+
+        }
+    );
+
 ```
