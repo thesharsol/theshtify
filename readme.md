@@ -14,13 +14,14 @@ npm i theshtify
 ### CDN
 
 ``` javascript
-<script src="https://cdn.jsdelivr.net/npm/theshtify@1.0.0/"> </script>
+<script src="https://cdn.jsdelivr.net/npm/theshtify/lib/theshtifyCDN.js"> </script>
 ```
 
 ### ES6
 
 ``` javascript
-import theshtify from theshtify;
+import { theshtify } from "theshtify/lib/theshtify";
+import "theshtify/css/theshtify.css";
 ```
 
 ## Features
@@ -45,7 +46,6 @@ import theshtify from theshtify;
 
 ## example
 
-###CDN
 ```js
     theshtify(
         {
