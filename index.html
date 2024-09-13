@@ -12,7 +12,7 @@
     <button id="notif_button" onclick="notify()">theshtify</button>
     <!-- <div class="" style="width: 1500px;height: 500px;left: 0;background-color: aquamarine;position: absolute;"></div> -->
 </body>
-<script src="./lib/theshtifyCDN.js" ></script>
+<script src="./lib/theshtifyCDN.js"></script>
 <script>
     function notify() {
         // let Notif = await import('./lib/notif.js');
@@ -20,16 +20,15 @@
         theshtify(
             {
                 message: 'welcome to theshtify',
-                x_align: 'rightd',
+                x_align: 'right',
                 y_align: 'top',
-                type: 'custom',
+                type: 'success',
                 duration: 5000,
                 font: {
                     size: 15,
                     weight: 900,
                     family: 'arlon'
                 },
-                duration:5000,
                 colors: {
                     bg: '#0C7059',
                     color: '#E0BC29',
@@ -41,10 +40,23 @@
                         bg: '#E0BC29'
                     }
                 },
-                radius: 2,
+                customColors: {
+                    success: {
+                        bg: '#0C7059',
+                        color: '#E0BC29',
+                        border: {
+                            type: '#085241',
+                            color: 'gray'
+                        },
+                        progress: {
+                            bg: '#E0BC29'
+                        }
+                    },
+                },
+                radius: 20,
                 bordered: true,
                 closer: true,
-                progress_height: 2,
+                progress_height: 10,
                 progress: true
 
             }

@@ -43,41 +43,209 @@ import "theshtify/css/theshtify.css";
 * progress
 * border radius
 * borders
+  
+## options
+<table style="width:100%">
+<tr>
+<th style="border:1px solid">option</th>
+<th style="border:1px solid">Description</th>
+<th style="border:1px solid">Type</th>
+<th style="border:1px solid">values</th>
+<th style="border:1px solid">Required</th>
+</tr>
+<!-- message -->
+<tr>
+<td style="border:1px solid">message</td>
+<td style="border:1px solid">the message to display in the notification</td>
+<td style="border:1px solid">String</td>
+<td style="border:1px solid">true,false</td>
+<td style="border:1px solid;"><span style="color:green">yes</span></td>
+</tr>
+<!-- type -->
+<tr>
+<td style="border:1px solid">type</td>
+<td style="border:1px solid">the type of the notification</td>
+<td style="border:1px solid">String</td>
+<td style="border:1px solid">success | danger | info | warning</td>
+<td style="border:1px solid;"><span style="color:green">yes</span></td>
+</tr>
+<!-- duration -->
+<tr>
+<td style="border:1px solid">duration</td>
+<td style="border:1px solid">how long the notice is displayed</td>
+<td style="border:1px solid">Number</td>
+<td style="border:1px solid">between 1000 and 5000</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- font -->
+<tr>
+<td style="border:1px solid">font</td>
+<td style="border:1px solid">object describing the various properties of the font: family, size and weight</td>
+<td style="border:1px solid">Object</td>
+<td style="border:1px solid">
+{<br>
+    size: 14,<br/>
+    weigth: 900,<br/>
+    family: 'corbel'
+    <br/>
+}
+</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- x_align -->
+<tr>
+<td style="border:1px solid">x_align</td>
+<td style="border:1px solid">defines the horizontal position of the notification</td>
+<td style="border:1px solid">String</td>
+<td style="border:1px solid">left | right | middle</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- y_align -->
+<tr>
+<td style="border:1px solid">y_align</td>
+<td style="border:1px solid">defines the vertical position of the notification</td>
+<td style="border:1px solid">String</td>
+<td style="border:1px solid">top | bottom | middle</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- close -->
+<tr>
+<td style="border:1px solid">closer</td>
+<td style="border:1px solid">allows you to condition the display of the part allowing you to close the notification</td>
+<td style="border:1px solid">Boolean</td>
+<td style="border:1px solid">true | false</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<tr>
+<!-- bordered -->
+<td style="border:1px solid">bordered</td>
+<td style="border:1px solid">specifies whether the notification will have a border</td>
+<td style="border:1px solid">Boolean</td>
+<td style="border:1px solid">true | false</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- borderWidth -->
+<td style="border:1px solid">borderWidth</td>
+<td style="border:1px solid">specifies the notification border-width</td>
+<td style="border:1px solid">Number</td>
+<td style="border:1px solid">any number</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- radius -->
+<td style="border:1px solid">radius</td>
+<td style="border:1px solid">specifies the notification border-radius</td>
+<td style="border:1px solid">Number</td>
+<td style="border:1px solid">any number</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- progress -->
+<td style="border:1px solid">progress</td>
+<td style="border:1px solid">is used to condition the display of the progress bar representing the notification display duration.</td>
+<td style="border:1px solid">Boolean</td>
+<td style="border:1px solid">true | false</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- progress_height -->
+<td style="border:1px solid">progress_height</td>
+<td style="border:1px solid">specifies the notification progress bar height</td>
+<td style="border:1px solid">Number</td>
+<td style="border:1px solid">between 1 and 5</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- colors -->
+<tr>
+<td style="border:1px solid">colors</td>
+<td style="border:1px solid">this property can only be used if the type is “custom” and allows you to define the colors and types of the different parts of the notification, such as: background color, text color, borders and progress bar.</td>
+<td style="border:1px solid">Object</td>
+<td style="border:1px solid">
+{</br>
+    bg: '#efefef',</br>
+    color: 'black',</br>
+    border: {</br>
+        type: 'solid',</br>
+        color: 'gray'</br>
+    },</br>
+    progress: {</br>
+        bg: 'gray'</br>
+    }</br>
+}
+</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+<!-- custom_colors -->
+<tr>
+<td style="border:1px solid">custom_colors</td>
+<td style="border:1px solid">this property lets you configure the colors of the different types of notifications to perfectly align the library with your platform's charter.</td>
+<td style="border:1px solid">Object</td>
+<td style="border:1px solid">
+{</br>
+    bg: '#efefef',</br>
+    color: 'black',</br>
+    border: {</br>
+        type: 'solid',</br>
+        color: 'gray'</br>
+    },</br>
+    progress: {</br>
+        bg: 'gray'</br>
+    }</br>
+}
+</td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+</table>
+
+## Basic example
+```js
+theshtify({message: 'welcome to theshtify',type:'success'});
+```
+## with custom type
 
 ## example
 
 ```js
-    theshtify(
-        {
-            message: 'welcome to theshtify',
-            x_align: 'middle',
-            y_align: 'middle',
-            type: 'danger',
-            duration: 6000,
-            font: {
-                size: 14,
-                weigth: 900,
-                family: 'corbel'
+theshtify(
+    {
+        message: 'welcome to theshtify',
+        x_align: 'right',
+        y_align: 'top',
+        type: 'success',
+        duration: 5000,
+        font: {
+            size: 15,
+            weight: 900,
+            family: 'arlon'
+        },
+        colors: {
+            bg: '#0C7059',
+            color: '#E0BC29',
+            border: {
+                type: '#085241',
+                color: 'gray'
             },
-            duration:300,
-            colors: {
-                bg: '#efefef',
-                color: 'black',
+            progress: {
+                bg: '#E0BC29'
+            }
+        },
+        customColors: {
+            success: {
+                bg: '#0C7059',
+                color: '#E0BC29',
                 border: {
-                    type: 'solid',
+                    type: '#085241',
                     color: 'gray'
                 },
                 progress: {
-                    bg: 'gray'
+                    bg: '#E0BC29'
                 }
             },
-            radius: 2,
-            bordered: true,
-            // closer: true,
-            progress_height: 2,
-            progress: true
+        },
+        radius: 20,
+        bordered: true,
+        closer: true,
+        progress_height: 10,
+        progress: true
 
-        }
-    );
+    }
+);  
 
 ```
