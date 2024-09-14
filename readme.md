@@ -15,9 +15,10 @@ npm i theshtify
 
 ``` javascript
 <script src="https://cdn.jsdelivr.net/npm/theshtify/lib/theshtifyCDN.js"> </script>
+<link rel="styleSheet" href="https://cdn.jsdelivr.net/npm/theshtify@1.0.1/css/theshtify.css"/>
 ```
 
-### ES6
+### ESModule
 
 ``` javascript
 import { theshtify } from "theshtify/lib/theshtify";
@@ -38,13 +39,15 @@ import "theshtify/css/theshtify.css";
 * Background color
 * Close icon display
 * Display position
-* Offset position
 * font
 * progress
 * border radius
 * borders
   
-## options
+## Presentation
+The theshtify function takes as a parameter an object describing your notifications. the various options are available in the descriptions shown below.
+
+## Options
 <table style="width:100%">
 <tr>
 <th style="border:1px solid">option</th>
@@ -69,7 +72,35 @@ import "theshtify/css/theshtify.css";
 <td style="border:1px solid">success | danger | info | warning</td>
 <td style="border:1px solid;"><span style="color:green">yes</span></td>
 </tr>
+<!-- config -->
+<tr>
+<td style="border:1px solid">config</td>
+<td style="border:1px solid">is an object that describe the notifications display settings</td>
+<td style="border:1px solid">Object</td>
+<td style="border:1px solid"></td>
+<td style="border:1px solid;"><span style="color:red">no</span></td>
+</tr>
+
+</table>
+
+## Basic example
+
+```js
+theshtify({message: 'welcome to theshtify',type:'success'});
+```
+## Configuration options
+
+the configuration options allow you to fully adapt theshtify to the context of your application. the different options are described below
+
+<table>
 <!-- duration -->
+<tr>
+<th style="border:1px solid">Option</th>
+<th style="border:1px solid">Description</th>
+<th style="border:1px solid">Type</th>
+<th style="border:1px solid">Values</th>
+<th style="border:1px solid">Required</th>
+</tr>
 <tr>
 <td style="border:1px solid">duration</td>
 <td style="border:1px solid">how long the notice is displayed</td>
@@ -125,7 +156,7 @@ import "theshtify/css/theshtify.css";
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
 <!-- borderWidth -->
-<td style="border:1px solid">borderWidth</td>
+<td style="border:1px solid">border_width</td>
 <td style="border:1px solid">specifies the notification border-width</td>
 <td style="border:1px solid">Number</td>
 <td style="border:1px solid">any number</td>
@@ -194,58 +225,102 @@ import "theshtify/css/theshtify.css";
 </tr>
 </table>
 
-## Basic example
+## Example with type "custom"
+Using the **“custom”** type you can (as described in the table above) describe custom colors for different parts of your notification.
 ```js
-theshtify({message: 'welcome to theshtify',type:'success'});
-```
-## with custom type
+theshtify(
+    {
+        message: 'welcome to theshtify',
+        type: 'custom',
+        config:{
+            colors: {
+                bg: '#0C7059',/** notification background */
+                color: '#E0BC29',/** text-color*/
+                border: {
+                    type: 'solid',/** border-type support all css types */
+                    color: 'gray'/**the border color */
+                },
+                progress: {
+                    bg: '#E0BC29'/** the progress bar color */
+                }
+            }            
+        }
 
-## example
+    }
+);
+```
+>If you use the **“custom”** type without describing the colors as in the example, or omit certain parameters, theshtify will use the default values configured for the type
+
+## Colors configuration example
+
+
+By default theshtify provides 4 types of notifications **success, infos, danger and warning** with corresponding colors. it may be that in the context of your project you want to redefine these colors, to do this simply redefine the description of the type in the **“customColors”**.
 
 ```js
 theshtify(
     {
         message: 'welcome to theshtify',
-        x_align: 'right',
-        y_align: 'top',
         type: 'success',
-        duration: 5000,
-        font: {
-            size: 15,
-            weight: 900,
-            family: 'arlon'
-        },
-        colors: {
+        config: {
+            custom_colors: {
+                success: {
+                    bg: '#0C7059',
+                    color: '#E0BC29',
+                    border: {
+                        type: 'solid',
+                        color: 'gray'
+                    },
+                    progress: {
+                        bg: '#E0BC29'
+                    }
+                },
+            },
+        }
+
+    }
+)
+```
+
+>In the previous example, theshtify will use the configurations you specified for the **“success”** type. naturally, the other types will use theshtify's default colors, since we only specified custom configurations for the **“success”** type.
+
+## Full example
+
+```js
+let config = {
+    x_align: 'right',
+    y_align: 'top',
+    duration: 5000,
+    font: {
+        size: 15,
+        weight: 900,
+        family: 'arlon'
+    },
+    custom_colors: {
+        success: {
             bg: '#0C7059',
             color: '#E0BC29',
             border: {
-                type: '#085241',
+                type: 'solid',
                 color: 'gray'
             },
             progress: {
                 bg: '#E0BC29'
             }
         },
-        customColors: {
-            success: {
-                bg: '#0C7059',
-                color: '#E0BC29',
-                border: {
-                    type: '#085241',
-                    color: 'gray'
-                },
-                progress: {
-                    bg: '#E0BC29'
-                }
-            },
-        },
-        radius: 20,
-        bordered: true,
-        closer: true,
-        progress_height: 10,
-        progress: true
+        /** you can also add other types configs */
+    },
+    radius: 20,
+    bordered: true,
+    border_width: 1,
+    closer: true,
+    progress: true,
+    progress_height: 2
 
-    }
-);  
-
+}
+theshtify({ message: 'welcome to theshtify', type: 'success', config: config });
 ```
+>if you're working with modules, you can define the configuration in a separate file and import it at runtime
+
+## Errors
+
+in the event of an error, theshtify will generate an error visible in your browser's console
