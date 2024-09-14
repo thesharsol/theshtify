@@ -1,6 +1,6 @@
 {
   "name": "theshtify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Thesharsol notifyer is a lightweight, vanilla JS toast notification library.",
   "main": "index.js",
   "directories": {
