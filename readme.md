@@ -147,8 +147,9 @@ the configuration options allow you to fully adapt theshtify to the context of y
 <td style="border:1px solid">true | false</td>
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
-<tr>
+
 <!-- bordered -->
+<tr>
 <td style="border:1px solid">bordered</td>
 <td style="border:1px solid">specifies whether the notification will have a border</td>
 <td style="border:1px solid">Boolean</td>
@@ -156,6 +157,7 @@ the configuration options allow you to fully adapt theshtify to the context of y
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
 <!-- borderWidth -->
+<tr>
 <td style="border:1px solid">border_width</td>
 <td style="border:1px solid">specifies the notification border-width</td>
 <td style="border:1px solid">Number</td>
@@ -163,6 +165,7 @@ the configuration options allow you to fully adapt theshtify to the context of y
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
 <!-- radius -->
+<tr>
 <td style="border:1px solid">radius</td>
 <td style="border:1px solid">specifies the notification border-radius</td>
 <td style="border:1px solid">Number</td>
@@ -170,6 +173,7 @@ the configuration options allow you to fully adapt theshtify to the context of y
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
 <!-- progress -->
+<tr>
 <td style="border:1px solid">progress</td>
 <td style="border:1px solid">is used to condition the display of the progress bar representing the notification display duration.</td>
 <td style="border:1px solid">Boolean</td>
@@ -177,6 +181,7 @@ the configuration options allow you to fully adapt theshtify to the context of y
 <td style="border:1px solid;"><span style="color:red">no</span></td>
 </tr>
 <!-- progress_height -->
+<tr>
 <td style="border:1px solid">progress_height</td>
 <td style="border:1px solid">specifies the notification progress bar height</td>
 <td style="border:1px solid">Number</td>
