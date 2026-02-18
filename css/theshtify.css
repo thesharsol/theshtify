@@ -37,5 +37,15 @@
 .Thesharsol-notifyer {
   overflow: hidden;
   padding: 2px;
-  transition: top linear 0.2s;
+  transition: top linear 0.2s, opacity 0.15s ease-in;
+  opacity: 0;
+}
+
+.Thesharsol-notifyer.fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-out;
+}
+
+.Thesharsol-notifyer .progress .content {
+  transition: width linear;
 }

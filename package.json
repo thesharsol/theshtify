@@ -2,12 +2,13 @@
   "name": "theshtify",
   "version": "1.0.5",
   "description": "Thesharsol notifyer is a lightweight, vanilla JS toast notification library.",
-  "main": "index.js",
+  "main": "lib/theshtify.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild lib/theshtifyCDN.js --bundle --outfile=dist/theshtify.cdn.js && esbuild lib/theshtify.js --bundle --minify --outfile=dist/theshtify.min.js",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/thesharsol/theshtify/issues"
   },
-  "homepage": "https://github.com/thesharsol/theshtify#readme"
+  "homepage": "https://github.com/thesharsol/theshtify#readme",
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "jsdom": "^28.1.0",
+    "vitest": "^4.0.18"
+  }
 }
